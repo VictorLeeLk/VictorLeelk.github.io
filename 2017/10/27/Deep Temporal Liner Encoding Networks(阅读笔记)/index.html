@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="深度学习，行为识别," />
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="Deep Temporal Liner Encoding Networks(阅读笔记) Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be  摘要：人类行为的表示采用从整个视频中提取CNN-encodi">
+<meta name="keywords" content="深度学习，行为识别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Temporal Liner Encoding Networks(阅读笔记)">
 <meta property="og:url" content="http://yoursite.com/2017/10/27/Deep Temporal Liner Encoding Networks(阅读笔记)/index.html">
@@ -90,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/10/27/img/图2TLE结构应用于Two-stream.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/27/img/图3应用3D网络.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/27/img/时域深度线性编码层算法.png">
-<meta property="og:updated_time" content="2017-10-27T07:12:18.503Z">
+<meta property="og:updated_time" content="2017-10-27T14:11:17.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Temporal Liner Encoding Networks(阅读笔记)">
 <meta name="twitter:description" content="Deep Temporal Liner Encoding Networks(阅读笔记) Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be  摘要：人类行为的表示采用从整个视频中提取CNN-encodi">
@@ -104,7 +105,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.3',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -165,7 +166,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Stay foolish,Stay hungry!</p>
       
   </div>
 
@@ -297,6 +298,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/行为识别/" itemprop="url" rel="index">
+                    <span itemprop="name">行为识别</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -332,8 +355,7 @@
 <p>b）：适用于所有类型的网络，例如2D和3D CNN的视频分类；</p>
 <p>c）：为特征交互建模为一个更具表现的方式而且没有信息的损失。</p>
 <p>论文在两个视频数据集上实验：HMDB51和UCF101。结果显示LTE比当前state-of-art方法在这两个数据集上的结果都要优异。</p>
-<p>###<strong>1/引言：</strong></p>
-<ul>
+<h3 id="1-引言："><a href="#1-引言：" class="headerlink" title="1/引言："></a><strong>1/引言：</strong></h3><ul>
 <li>潜在应用：视频监控/行为分析/视频检索等</li>
 <li>问题或难点：相机移动，连续改变的拍摄角度。缺乏对长范围时域信息的提取能力，这也是端到端网络相对于传统特征的行为识别方法，不具备优势的原因。</li>
 </ul>
@@ -368,8 +390,7 @@
 <p>实验显示在two-stream卷积网络结合TLEs获得了state-of-art性能。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HMDB51：71.1%</div><div class="line">UCF101: 95.6%</div></pre></td></tr></table></figure>
 <hr>
-<p>###<strong>2/  Related work</strong></p>
-<p><strong>非ConvNets</strong>：代表性的方法主要是IDT，目前达到了手工特征的state-of-art方法。</p>
+<h3 id="2-Related-work"><a href="#2-Related-work" class="headerlink" title="2/  Related work"></a><strong>2/  Related work</strong></h3><p><strong>非ConvNets</strong>：代表性的方法主要是IDT，目前达到了手工特征的state-of-art方法。</p>
 <blockquote>
 <p>[34] H. Wang and C. Schmid. Action recognition with improved<br>trajectories. In ICCV, 2013.</p>
 </blockquote>
@@ -400,8 +421,7 @@
 <p>[10] Y. Gao, O. Beijbom, N. Zhang, and T. Darrell. Compact<br>bilinear pooling. In CVPR, 2016.</p>
 </blockquote>
 <p>论文提出的<strong>时域线性编码</strong>在整个视频中视频分割之间捕获更多直接的交互信息，编码这些交互信息到一个紧致的视频表示，来作为视频层次的预测。这是第一个可以从整个视频中编码时域特征的端到端深度网络。</p>
-<p>###3/方法</p>
-<p>我们的目标是创建一个特征空间，可以用来表示视频中的视频片段或者选中的视频帧信息，而不是为每个视频帧或者视频片段分别使用分类器进行打分，再进行融合的模型。论文提出的TLE从整个视频中聚合空域和时域信息，编码为一个鲁棒紧致的视频表示，采用端到端的学习方法，如图2和图3所示：</p>
+<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3/方法"></a>3/方法</h3><p>我们的目标是创建一个特征空间，可以用来表示视频中的视频片段或者选中的视频帧信息，而不是为每个视频帧或者视频片段分别使用分类器进行打分，再进行融合的模型。论文提出的TLE从整个视频中聚合空域和时域信息，编码为一个鲁棒紧致的视频表示，采用端到端的学习方法，如图2和图3所示：</p>
 <ul>
 <li>two-stream方案：</li>
 </ul>
@@ -430,6 +450,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习，行为识别/" rel="tag"># 深度学习，行为识别</a>
+          
+        </div>
       
 
       
@@ -529,14 +555,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -568,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Temporal-Liner-Encoding-Networks-阅读笔记"><span class="nav-number">1.</span> <span class="nav-text">Deep Temporal Liner Encoding Networks(阅读笔记)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1深度时域线性编码"><span class="nav-number">1.1.</span> <span class="nav-text">3/1深度时域线性编码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Temporal-Liner-Encoding-Networks-阅读笔记"><span class="nav-number">1.</span> <span class="nav-text">Deep Temporal Liner Encoding Networks(阅读笔记)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引言："><span class="nav-number">1.1.</span> <span class="nav-text">1/引言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Related-work"><span class="nav-number">1.2.</span> <span class="nav-text">2/  Related work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-方法"><span class="nav-number">1.3.</span> <span class="nav-text">3/方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1深度时域线性编码"><span class="nav-number">1.4.</span> <span class="nav-text">3/1深度时域线性编码</span></a></li></ol></li></ol></div>
             
 
           </div>
