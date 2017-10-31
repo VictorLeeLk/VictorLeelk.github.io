@@ -254,7 +254,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VictorLee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/图3应用3D网络.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -403,7 +403,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VictorLee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/图3应用3D网络.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -534,7 +534,7 @@ http://ooml.ml/2017/build-blog-hexo-advanced/
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VictorLee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/图3应用3D网络.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -623,7 +623,13 @@ http://ooml.ml/2017/build-blog-hexo-advanced/
         
           
           Deep Temporal Liner Encoding Networks(阅读笔记)
-Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname
+Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be
+
+摘要：人类行为的表示采用从整个视频中提取CNN-encoding特征。但是CNN主要聚焦于空域和时域网络的融合，因此被限制在处理短的视频序列。论文提出了一种新的视频表示,称为$\color{red}{时域线性编码(TLE)} $,通过嵌入CNN内部作为一个新的网络层，它能够捕获整个视频的表象和运动信息。通过编码汇总信息到鲁棒的视频特征表示，通过端到端的学习。TLEs的优点如下：
+a）：学习整个视频为一个紧致的特征表示，学习语义和区分性较大的特征空间；
+b）：适用于所有类型的网络，例如2D和3D CNN的视频分类；
+c）：为特征交互建模为一个更具表现的方式而且没有信息的损失。
+论文在两个视频数据集上实验：HMDB51和UCF101。结果显示LTE比当前s
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -683,7 +689,7 @@ Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zu
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VictorLee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/图3应用3D网络.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -749,8 +755,17 @@ Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zu
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+More info: Deployment
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/27/hello-world/#more" rel="contents">
@@ -825,6 +840,10 @@ Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zu
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/图3应用3D网络.png"
+                alt="VictorLee" />
             
               <p class="site-author-name" itemprop="name">VictorLee</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -1079,6 +1098,28 @@ Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zu
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

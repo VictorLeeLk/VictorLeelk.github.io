@@ -87,15 +87,21 @@
 <meta property="og:site_name" content="一颗小白菜">
 <meta property="og:description" content="Deep Temporal Liner Encoding Networks(阅读笔记) Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be  摘要：人类行为的表示采用从整个视频中提取CNN-encodi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/10/27/img/TLE.png">
-<meta property="og:image" content="http://yoursite.com/2017/10/27/img/图2TLE结构应用于Two-stream.png">
-<meta property="og:image" content="http://yoursite.com/2017/10/27/img/图3应用3D网络.png">
-<meta property="og:image" content="http://yoursite.com/2017/10/27/img/时域深度线性编码层算法.png">
-<meta property="og:updated_time" content="2017-10-27T14:11:17.192Z">
+<meta property="og:image" content="http://yoursite.com/images/TLE.png">
+<meta property="og:image" content="http://yoursite.com/images/图2TLE结构应用于Two-stream.png">
+<meta property="og:image" content="http://yoursite.com/images/图3应用3D网络.png">
+<meta property="og:image" content="http://yoursite.com/images/时域深度线性编码层算法.png">
+<meta property="og:image" content="http://yoursite.com/images/优化器梯度.png">
+<meta property="og:image" content="http://yoursite.com/images/算法2.png">
+<meta property="og:image" content="http://yoursite.com/images/聚集函数.png">
+<meta property="og:image" content="http://yoursite.com/images/网络模型.png">
+<meta property="og:image" content="http://yoursite.com/images/state-of-art.png">
+<meta property="og:image" content="http://yoursite.com/images/CONTEXT.png">
+<meta property="og:updated_time" content="2017-10-31T02:53:40.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Temporal Liner Encoding Networks(阅读笔记)">
 <meta name="twitter:description" content="Deep Temporal Liner Encoding Networks(阅读笔记) Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be  摘要：人类行为的表示采用从整个视频中提取CNN-encodi">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/27/img/TLE.png">
+<meta name="twitter:image" content="http://yoursite.com/images/TLE.png">
 
 
 
@@ -263,7 +269,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VictorLee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/图3应用3D网络.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -350,12 +356,12 @@
         <h2 id="Deep-Temporal-Liner-Encoding-Networks-阅读笔记"><a href="#Deep-Temporal-Liner-Encoding-Networks-阅读笔记" class="headerlink" title="Deep Temporal Liner Encoding Networks(阅读笔记)"></a>Deep Temporal Liner Encoding Networks(阅读笔记)</h2><blockquote>
 <p>Ali Diba1, Vivek Sharma1, and Luc Van Gool1,2 1ESAT-PSI, KU Leuven, 2CVL, ETH Zurich ¨ {firstname.lastname}@esat.kuleuven.be</p>
 </blockquote>
-<p><strong>摘要：</strong>人类行为的表示采用从整个视频中提取CNN-encoding特征。但是CNN主要聚焦于空域和时域网络的融合，因此被限制在处理短的视频序列。<strong>论文提出了一种新的视频表示</strong>,称为$\color{red}{时域线性编码(TLE)}$,通过嵌入CNN内部作为一个新的网络层，它能够捕获整个视频的表象和运动信息。通过编码汇总信息到鲁棒的视频特征表示，通过端到端的学习。TLEs的优点如下：</p>
+<p><strong>摘要：</strong>人类行为的表示采用从整个视频中提取CNN-encoding特征。但是CNN主要聚焦于空域和时域网络的融合，因此被限制在处理短的视频序列。<strong>论文提出了一种新的视频表示</strong>,称为$\color{red}{时域线性编码(TLE)} $,通过嵌入CNN内部作为一个新的网络层，它能够捕获整个视频的表象和运动信息。通过编码汇总信息到鲁棒的视频特征表示，通过端到端的学习。TLEs的优点如下：</p>
 <p>a）：学习整个视频为一个紧致的特征表示，学习语义和区分性较大的特征空间；</p>
 <p>b）：适用于所有类型的网络，例如2D和3D CNN的视频分类；</p>
 <p>c）：为特征交互建模为一个更具表现的方式而且没有信息的损失。</p>
 <p>论文在两个视频数据集上实验：HMDB51和UCF101。结果显示LTE比当前state-of-art方法在这两个数据集上的结果都要优异。</p>
-<h3 id="1-引言："><a href="#1-引言：" class="headerlink" title="1/引言："></a><strong>1/引言：</strong></h3><ul>
+<h3 id="1-引言："><a href="#1-引言：" class="headerlink" title="1.引言："></a><strong>1.引言：</strong></h3><ul>
 <li>潜在应用：视频监控/行为分析/视频检索等</li>
 <li>问题或难点：相机移动，连续改变的拍摄角度。缺乏对长范围时域信息的提取能力，这也是端到端网络相对于传统特征的行为识别方法，不具备优势的原因。</li>
 </ul>
@@ -379,7 +385,7 @@
 <p>​       trajectory-constrained pooling，3D pooling和consensus pooling。</p>
 <p>​       空域和时域的融合成为了目前state-of-art方法中的重要研究内容。</p>
 <p>论文提出的空域-时域编码方法如下图所示：</p>
-<p><img src="../img/TLE.png" alt="TLE"></p>
+<p><img src="/images/TLE.png" alt="TLE"></p>
 <p>该时域-空域深度特征编码结构的<strong>设计的目的</strong>在于从较长的时间范围内聚集多个分割视频。</p>
 <ul>
 <li>TLE是特征进行时域聚集的一种形式，其中这些特征是从整个视频中通过特征图聚集的技术稀疏采样获取。通过端到端深度网络的编码方法将之映射到低纬度空间。</li>
@@ -390,7 +396,7 @@
 <p>实验显示在two-stream卷积网络结合TLEs获得了state-of-art性能。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HMDB51：71.1%</div><div class="line">UCF101: 95.6%</div></pre></td></tr></table></figure>
 <hr>
-<h3 id="2-Related-work"><a href="#2-Related-work" class="headerlink" title="2/  Related work"></a><strong>2/  Related work</strong></h3><p><strong>非ConvNets</strong>：代表性的方法主要是IDT，目前达到了手工特征的state-of-art方法。</p>
+<h3 id="2-Related-work"><a href="#2-Related-work" class="headerlink" title="2. Related work"></a><strong>2. Related work</strong></h3><p><strong>非ConvNets</strong>：代表性的方法主要是IDT，目前达到了手工特征的state-of-art方法。</p>
 <blockquote>
 <p>[34] H. Wang and C. Schmid. Action recognition with improved<br>trajectories. In ICCV, 2013.</p>
 </blockquote>
@@ -421,21 +427,115 @@
 <p>[10] Y. Gao, O. Beijbom, N. Zhang, and T. Darrell. Compact<br>bilinear pooling. In CVPR, 2016.</p>
 </blockquote>
 <p>论文提出的<strong>时域线性编码</strong>在整个视频中视频分割之间捕获更多直接的交互信息，编码这些交互信息到一个紧致的视频表示，来作为视频层次的预测。这是第一个可以从整个视频中编码时域特征的端到端深度网络。</p>
-<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3/方法"></a>3/方法</h3><p>我们的目标是创建一个特征空间，可以用来表示视频中的视频片段或者选中的视频帧信息，而不是为每个视频帧或者视频片段分别使用分类器进行打分，再进行融合的模型。论文提出的TLE从整个视频中聚合空域和时域信息，编码为一个鲁棒紧致的视频表示，采用端到端的学习方法，如图2和图3所示：</p>
+<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3.方法"></a>3.方法</h3><p>我们的目标是创建一个特征空间，可以用来表示视频中的视频片段或者选中的视频帧信息，而不是为每个视频帧或者视频片段分别使用分类器进行打分，再进行融合的模型。论文提出的TLE从整个视频中聚合空域和时域信息，编码为一个鲁棒紧致的视频表示，采用端到端的学习方法，如图2和图3所示：</p>
 <ul>
 <li>two-stream方案：</li>
 </ul>
-<p><img src="../img/图2TLE结构应用于Two-stream.png" alt="图2TLE结构应用于Two-stream"></p>
+<p><img src="/images/图2TLE结构应用于Two-stream.png" alt="图2TLE结构应用于Two-stream"></p>
 <ul>
 <li>TLE应用于3D网络：</li>
 </ul>
-<p><img src="../img/图3应用3D网络.png" alt="img"></p>
-<h3 id="3-1深度时域线性编码"><a href="#3-1深度时域线性编码" class="headerlink" title="3/1深度时域线性编码"></a><strong>3/1深度时域线性编码</strong></h3><p><img src="../img/时域深度线性编码层算法.png" alt="时域深度线性编码层算法"></p>
+<p><img src="/images/图3应用3D网络.png" alt="img"></p>
+<p><strong>3.1深度时域线性编码</strong></p>
+<p><img src="/images/时域深度线性编码层算法.png" alt="时域深度线性编码层算法"></p>
 <p>操作符主要有逐元素的平均，最大，及相乘，其中逐个元素的相乘获得了最佳的效果。</p>
 <p>时域融合矩阵X作为encoding （或者下采样）方法E的输入，E：X-&gt;y,产生一个线性的编码特征向量y,其中y为d维编码特征。研究讨论一下两种编码方法E：</p>
 <ul>
-<li>Bilinear Models：</li>
+<li><p><strong>Bilinear Models：</strong>双线性模型计算两个特征图的外积，如下：</p>
+<p>​                                                     $$y=W[X \bigotimes X^{’ }]$$</p>
+<blockquote>
+<p>其中，$X\in R^{(hw)\times c},X^{’ }\in R^{(hw)\times c^{’ }} $是输入特征图，$y\in R^{(cc^{’})}$为双线性特征，$\bigotimes$表示外积，[]将矩阵通过列连接起来组成一个向量，W表示待学习的模型参数。在这里，X=$X^{‘}$.</p>
+</blockquote>
+<p>结果获得的 双线性模型特征能够获取到每个空间位置上的特征相互之间的影响，这里将会产生一个高纬度向量。因此，选择Tensor Sketch 算法，该算法可以讲高维空间映射到低纬度空间，并且没有直接计算外积。这样将减少模型参数的数量，W可以通过端到端的反向传播算法学习。</p>
+</li>
+<li><p><strong>全连接方法：</strong>在最后一层卷积层和分类层之间是全连接层，全连接层和分类层的模型参数在从头开始学习或者迁移学习过程中学习得到。</p>
+<p>与全连接采样的方法相比，双线性能够将高纬度特征空间映射到低纬度空间，这样参数更少，并且能够获得比全连接层更好的效果，且不说计算效率更高。</p>
+<p>也可以采用其他的编码方法，如fisher编码，VLAD等。当使用双线性编码方法，特征通过有符号平方根和L2-标准化。不管哪种编码方法，我们采用softmax作为分类器。</p>
+<hr>
+</li>
+<li><p><strong>End -to -end 训练：</strong></p>
+<p>本文使用K=3，即3个视频帧。CNNs的输出特征图为S1，S2，S3,。时间上聚合的特征为$X=S_1\circ S_2\circ S_3，时域线性编码特征记为y，记\iota 为损失函数。$算法2表示了3个片段通过前向和反向的时域线性编码步骤。</p>
+<p><img src="/images/优化器梯度.png" alt="优化器梯度"></p>
+<p> 在端到端的学习过程中，使用梯度下降算法（SGD）。时域线性编码参数W通过整个视频学习得到。具体步骤如下：</p>
+<p><img src="/images/算法2.png" alt="算法2"></p>
+</li>
 </ul>
+<h3 id="4评价"><a href="#4评价" class="headerlink" title="4评价"></a>4<strong>评价</strong></h3><p>主要是在2D和3D卷积神经网络上对整个视频的长范围的信息进行时域线性编码，与当前state-of-art方法进行比较。</p>
+<h4 id="4-1-数据集"><a href="#4-1-数据集" class="headerlink" title="4.1.数据集"></a><strong>4.1.数据集</strong></h4><ul>
+<li><p>UCF101</p>
+<p>13320个视频，101类数据，每个类至少100个视频片段。</p>
+</li>
+<li><p>HMDB51</p>
+<p>6766个视频，51类数据，每个类至少100个视频片段。</p>
+</li>
+</ul>
+<h4 id="4-2-具体细节"><a href="#4-2-具体细节" class="headerlink" title="4.2.具体细节"></a>4.2.具体细节</h4><blockquote>
+<p>实验硬件及软件环境：caffe+2 Titan X。</p>
+<p>2种实验方案：</p>
+<ul>
+<li>two-stream +时域线性编码和 C3D+时域线性编码。</li>
+<li><p>采用双线性模型或者全连接层模型。</p>
+<p>K=3 使用3个片段进行训练和测试。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Two-stream ConvNets:</strong></p>
+<p> 采用的网络框架：AlexNet，VGG-16和BN-Inception。</p>
+<p>输入：空域网络输入是视频帧，时域网络输入是10帧密集光流。</p>
+<p>​            原始尺寸为$256\times 340$,随机裁剪为$224\times 224$,然后中心化后进行训练。</p>
+<p>训练细节：预训练网络，取代分类层，设置为C-ways softmax分类层，C为数据集类别数目。</p>
+<p>算法：SGD，固定的权值衰减（5$\times 10^{-4}$）,动量为0.9，训练时候batch-size为15。</p>
+<ul>
+<li><p><strong>TLE with 双线性模型</strong></p>
+<p>从网络最后一层卷积层提取特征图作为双线性模型的输入。例如对于BN-Inception最后一层卷积层的特征图输出为$14\times 14\times 1024$,产生的双线性特征输入为$1024\times 1024$， 最终产生8196维度紧致双线性模型的特征。</p>
+<p>采用两步来微调整个模型。</p>
+<ul>
+<li>首先，采用逻辑回归分类器训练最后一层；</li>
+<li>第二步，微调整个模型。</li>
+</ul>
+<p>具体训练参数设置见论文。</p>
+</li>
+<li><p><strong>TLE  with 全连接层</strong></p>
+<p>采用相同的微调方案。在最后一层卷积层和C-way softmax分类层之间使用全连接层。</p>
+<p>具体参数见论文。</p>
+<p>对于C3D网络内容暂不展开。</p>
+</li>
+</ul>
+<p><strong>测试：</strong></p>
+<p>  给定一个视频，分成相同持续时长的3个部分。对于TLE two-stream ConvNet测试，每一次，3个部分的每个部分的输入分别为：1帧RGB和10帧光流帧。总体上，采样5帧RGB，因此3个分割总共从视频中提取15帧RGB图像。对于视频预测，我们平均所有分割组的预测得分。最终时域和空域的得分通过均值获得。</p>
+<h4 id="4-4-TLE评价"><a href="#4-4-TLE评价" class="headerlink" title="4.4. TLE评价"></a>4.4. TLE评价</h4><p>这个阶段，</p>
+<ul>
+<li>采用不同的聚集函数T来聚集3个分割到一个紧致的中间的编码表示；</li>
+<li>不同的卷积神经网络架构用于two-stream和C3D网络</li>
+</ul>
+<p><strong>聚集函数：</strong></p>
+<p><img src="/images/聚集函数.png" alt="聚集函数"></p>
+<blockquote>
+<p>逐元素相乘能获得最佳效果。</p>
+</blockquote>
+<p><strong>网络模型:</strong></p>
+<p><img src="/images/网络模型.png" alt="网络模型"></p>
+<p>BN-Inception效果最佳，说明越深的网络，表现越好。</p>
+<h4 id="4-4-与state-of-art方法进行比较"><a href="#4-4-与state-of-art方法进行比较" class="headerlink" title="4.4. 与state-of-art方法进行比较"></a>4.4. 与state-of-art方法进行比较</h4><p><img src="/images/state-of-art.png" alt="state-of-art"></p>
+<p>可以得出结论，我们的算法TLE：Bilinear获得了最佳的效果，比TLE：FC-Pooling方法好3.4%，比TLE：Bilinear+TS好0.5%.</p>
+<p>其他主要方法参考文献如下：</p>
+<blockquote>
+<p><strong>DT+MVSM:</strong>[2] Z. Cai, L. Wang, X. Peng, and Y. Qiao. Multi-view super<br>vector for action recognition. In CVPR, 2014.</p>
+<p><strong>iDT+FV:</strong>[34] H. Wang and C. Schmid. Action recognition with improved<br>trajectories. In ICCV, 2013.</p>
+<p><strong>C3D:</strong>[32] D. Tran, L. Bourdev, R. Fergus, L. Torresani, and M. Paluri.<br>Learning spatiotemporal features with 3d convolutional net-<br>works. In ICCV, 2015.</p>
+<p><strong>Two-stream+LSTM:</strong>[40] J. Yue-Hei Ng, M. Hausknecht, S. Vijayanarasimhan,<br>O. Vinyals, R. Monga, and G. Toderici. Beyond short snip-<br>pets: Deep networks for video classification. In CVPR, 2015.</p>
+<p><strong>TDD+FV:</strong>[36] L. Wang, Y. Qiao, and X. Tang. Action recognition with<br>trajectory-pooled deep-convolutional descriptors. In CVPR,<br>2015.</p>
+<p><strong>LTC:</strong>[33] G. Varol, I. Laptev, and C. Schmid. Long-term tempo-<br>ral convolutions for action recognition. arXiv preprint<br>arXiv:1604.04494, 2016.</p>
+<p><strong>KVMF:</strong>[43] W. Zhu, J. Hu, G. Sun, X. Cao, and Y. Qiao. A key volume<br>mining deep framework for action recognition. In CVPR,<br>2016.</p>
+<p><strong>TSN:</strong>[37] L. Wang, Y. Xiong, Z. Wang, Y. Qiao, D. Lin, X. Tang, and<br>L. Van Gool. Temporal segment networks: towards good<br>practices for deep action recognition. In ECCV, 2016.</p>
+<p><strong>3DConv+3DPooling:</strong>[7] C. Feichtenhofer, A. Pinz, and A. Zisserman. Convolutional<br>two-stream network fusion for video action recognition. In<br>CVPR, 2016.</p>
+</blockquote>
+<h3 id="5-场景上下文信息融入"><a href="#5-场景上下文信息融入" class="headerlink" title="5.场景上下文信息融入"></a>5.场景上下文信息融入</h3><p>这一部分描述了一个额外的实验，讲场景的上下文信息融入进去从而提升行为识别的性能。</p>
+<p>空域ConvNets在单个帧上进行训练，容易将视频中的场景和目标的上下文信息错分类，而这些对于行为识别是比较重要的信息。在这里，我们融入场景的上下文信息来提升行为识别性能。</p>
+<p>具体做法是加入第4个在数据集Places365上预训练的模型，背后的主要原因在于能够监测基于场景信息的额外表示，从而能够提升行为识别。使用two-stream+VGG16，表现如下：</p>
+<p><img src="/images/CONTEXT.png" alt="CONTEXT"></p>
+<h3 id="6-结论"><a href="#6-结论" class="headerlink" title="6.结论"></a>6.结论</h3><p>本文提出了时域线性编码，将之嵌入到卷积网络中，目的是嵌入整个视频的信息。结果是一个全局特征表示，从而是一个端到端的学习方案。在数据集UCF101和HMDB51上获得了最佳的性能，超过了其他方法。TLEs计算高效，鲁棒性能好，紧致，能够显著减少模型的参数，并且以一种更为直接的方式在没有信息损失的情况下获得了特征之间的相关性。同样对3D网络进行了测试，也获得了较为理想的效果。</p>
+<p>未来工作：关注时域和空域的分割融合方案，更一步研究结构方案。例如：对每一个单独的分割使用时域和空域网络的结合，然后以分层级的方式融合这个空时网络，最终获得一个全局的时空特征表示。</p>
 
       
     </div>
@@ -544,6 +644,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/图3应用3D网络.png"
+                alt="VictorLee" />
+            
               <p class="site-author-name" itemprop="name">VictorLee</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -612,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Temporal-Liner-Encoding-Networks-阅读笔记"><span class="nav-number">1.</span> <span class="nav-text">Deep Temporal Liner Encoding Networks(阅读笔记)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引言："><span class="nav-number">1.1.</span> <span class="nav-text">1/引言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Related-work"><span class="nav-number">1.2.</span> <span class="nav-text">2/  Related work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-方法"><span class="nav-number">1.3.</span> <span class="nav-text">3/方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1深度时域线性编码"><span class="nav-number">1.4.</span> <span class="nav-text">3/1深度时域线性编码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Temporal-Liner-Encoding-Networks-阅读笔记"><span class="nav-number">1.</span> <span class="nav-text">Deep Temporal Liner Encoding Networks(阅读笔记)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引言："><span class="nav-number">1.1.</span> <span class="nav-text">1.引言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Related-work"><span class="nav-number">1.2.</span> <span class="nav-text">2. Related work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-方法"><span class="nav-number">1.3.</span> <span class="nav-text">3.方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4评价"><span class="nav-number">1.4.</span> <span class="nav-text">4评价</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-数据集"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1.数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-具体细节"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2.具体细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-TLE评价"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.4. TLE评价</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-与state-of-art方法进行比较"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4. 与state-of-art方法进行比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-场景上下文信息融入"><span class="nav-number">1.5.</span> <span class="nav-text">5.场景上下文信息融入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-结论"><span class="nav-number">1.6.</span> <span class="nav-text">6.结论</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -817,6 +921,8 @@
   
 
   
+  
+
 
   
 
